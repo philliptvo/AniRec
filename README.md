@@ -1,3 +1,6 @@
+# Anime Service
+ANIME_URL = "http://localhost:4000/api/anime" (See services/anime_service )
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
