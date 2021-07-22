@@ -1,17 +1,27 @@
-const ANIME_URL = "http://localhost:4000/api/anime";
+const ANIME_URL = "http://localhost:8080/api/anime";
 
 const findAllAnimes = () => {
     return fetch(ANIME_URL)
         .then(response => response.json())
 }
 
-const findAnimeByTitle = (title) => {
-    return fetch(`${ANIME_URL}/${title}`)
+const findAnimeByTitle = (animeId) => {
+    return fetch(`${ANIME_URL}/${animeId}`)
         .then(response => response.json())
 }
 
 const addAnime = (info) => {
     fetch(ANIME_URL, {
+        method: 'POST',
+        body: JSON.stringify(info),
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(response => response.json())
+}
+
+const updateAnime = (animeId, info) => {
+    fetch(`${ANIME_URL}/${animeId}`, {
         method: 'POST',
         body: JSON.stringify(info),
         headers: {
@@ -29,5 +39,7 @@ const deleteAnime = (animeId) => {
 export default {
     findAllAnimes,
     findAnimeByTitle,
-    addAnime
+    addAnime,
+    updateAnime,
+    deleteAnime
 }
