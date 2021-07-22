@@ -5,7 +5,7 @@ const findAllAnimes = () => {
         .then(response => response.json())
 }
 
-const findAnimeByTitle = (animeId) => {
+const findAnimeById = (animeId) => {
     return fetch(`${ANIME_URL}/${animeId}`)
         .then(response => response.json())
 }
@@ -36,10 +36,12 @@ const deleteAnime = (animeId) => {
     }).then(response => response.json())
 }
 
-export default {
+const animeService = {
     findAllAnimes,
-    findAnimeByTitle,
+    findAnimeById,
     addAnime,
     updateAnime,
     deleteAnime
 }
+
+export default animeService

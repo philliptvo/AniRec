@@ -1,7 +1,9 @@
 import {BrowserRouter, Route} from "react-router-dom";
+
 import './App.css';
-import Anime from "./components/anime/anime";
-import AnimeDetail from "./components/anime/anime_detail";
+
+import Anime from "./components/anime/AnimeList";
+import AnimeDetail from "./components/anime/AnimeDetails";
 
 function App() {
   return (
@@ -10,13 +12,11 @@ function App() {
         <BrowserRouter>
           <div className="content">
             <Route
-                exact={true}
-                path={"/anime"}
+                exact path={"/anime"}
                 component={Anime}>
             </Route>
             <Route
-                exact={true}
-                path={"/anime/:animeId"}
+                exact path={"/anime/:animeId"}
                 component={AnimeDetail}>
             </Route>
 
