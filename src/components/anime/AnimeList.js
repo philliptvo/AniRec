@@ -3,24 +3,54 @@ import AnimeCard from "./AnimeCard";
 
 import animeService from '../../services/anime.service'
 
+// class AnimeList extends React.Component{
+//     state = {
+//         animeList: []
+//     }
+//
+//     componentDidMount = () =>
+//         animeService.findAllAnimes()
+//             .then(animeList =>this.setState({animeList}))
+//
+//     deleteAnime = (animeToDelete) => {
+//         animeService.deleteAnime(animeToDelete.animeId)
+//             .then(status => {
+//                 this.setState((prevState) => ({
+//                     ...prevState,
+//                     animeList: prevState.animeList.filter
+//                     (anime => anime !== animeToDelete)
+//                 }))
+//             })
+//     }
+// }
 const AnimeList = () => {
-    const [anime, setAnime] = useState([])
+    const [animeList, setAnimeList] = useState([])
 
     useEffect(() => {
         animeService.findAllAnimes()
             .then(animeList => {
-                setAnime(animeList)
+                setAnimeList(animeList)
             })
     }, [])
+
+    const deleteAnime = (animeToDelete) => {
+        animeService.deleteAnime(animeToDelete.animeId)
+            .then(status =>
+                setAnimeList(animeList => animeList.filter(anime => anime.animeId !== animeToDelete.animeId)))
+            }
 
     return (
         <div className="container">
             <h1>Anime</h1>
             <div className="row">
                 {
-                    anime.length > 0 &&
-                    anime.map(a => (
-                        <AnimeCard key={a.animeId} anime={a}/>
+                    animeList != null &&
+                    animeList.map(a => (
+                        <AnimeCard
+                            key={a.animeId}
+                            anime={a}
+                            deleteAnime={deleteAnime}
+                        />
                     ))
                 }
             </div>

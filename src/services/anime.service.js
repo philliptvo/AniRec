@@ -11,7 +11,7 @@ const findAnimeById = (animeId) => {
 }
 
 const addAnime = (info) => {
-    fetch(ANIME_URL, {
+    return fetch(ANIME_URL, {
         method: 'POST',
         body: JSON.stringify(info),
         headers: {
@@ -21,7 +21,7 @@ const addAnime = (info) => {
 }
 
 const updateAnime = (animeId, info) => {
-    fetch(`${ANIME_URL}/${animeId}`, {
+    return fetch(`${ANIME_URL}/${animeId}`, {
         method: 'POST',
         body: JSON.stringify(info),
         headers: {
@@ -31,7 +31,7 @@ const updateAnime = (animeId, info) => {
 }
 
 const deleteAnime = (animeId) => {
-    fetch(`${ANIME_URL}/${animeId}`, {
+    return fetch(`${ANIME_URL}/${animeId}`, {
         method: "DELETE"
     }).then(response => response.json())
 }
