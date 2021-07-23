@@ -2,27 +2,8 @@ import React, { useEffect, useState } from 'react';
 import AnimeCard from "./AnimeCard";
 
 import animeService from '../../services/anime.service'
+import {Link} from "react-router-dom";
 
-// class AnimeList extends React.Component{
-//     state = {
-//         animeList: []
-//     }
-//
-//     componentDidMount = () =>
-//         animeService.findAllAnimes()
-//             .then(animeList =>this.setState({animeList}))
-//
-//     deleteAnime = (animeToDelete) => {
-//         animeService.deleteAnime(animeToDelete.animeId)
-//             .then(status => {
-//                 this.setState((prevState) => ({
-//                     ...prevState,
-//                     animeList: prevState.animeList.filter
-//                     (anime => anime !== animeToDelete)
-//                 }))
-//             })
-//     }
-// }
 const AnimeList = () => {
     const [animeList, setAnimeList] = useState([])
 
@@ -39,9 +20,14 @@ const AnimeList = () => {
                 setAnimeList(animeList => animeList.filter(anime => anime.animeId !== animeToDelete.animeId)))
             }
 
+
     return (
         <div className="container">
             <h1>Anime</h1>
+            <Link to="/create-anime">
+                <i className="fas fa-plus fa-2x float-right btn"/>
+            </Link>
+
             <div className="row">
                 {
                     animeList != null &&

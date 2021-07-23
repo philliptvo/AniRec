@@ -10,7 +10,7 @@ const findAnimeById = (animeId) => {
         .then(response => response.json())
 }
 
-const addAnime = (info) => {
+const createAnime = (info) => {
     return fetch(ANIME_URL, {
         method: 'POST',
         body: JSON.stringify(info),
@@ -39,7 +39,7 @@ const deleteAnime = (animeId) => {
 const animeService = {
     findAllAnimes,
     findAnimeById,
-    addAnime,
+    createAnime,
     updateAnime,
     deleteAnime
 }
