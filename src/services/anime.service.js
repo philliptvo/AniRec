@@ -20,10 +20,10 @@ const createAnime = (info) => {
     }).then(response => response.json())
 }
 
-const updateAnime = (animeId, info) => {
+const updateAnime = (animeId, anime) => {
     return fetch(`${ANIME_URL}/${animeId}`, {
         method: 'POST',
-        body: JSON.stringify(info),
+        body: JSON.stringify(anime),
         headers: {
             'content-type': 'application/json'
         }
