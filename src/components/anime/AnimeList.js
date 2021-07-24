@@ -14,7 +14,7 @@ const AnimeList = () => {
             })
     }, [])
 
-    const deleteAnime = (animeToDelete) => {
+    const deleteAnimeHandler = (animeToDelete) => {
         animeService.deleteAnime(animeToDelete.animeId)
             .then(status =>
                 setAnimeList(animeList => animeList.filter(anime => anime.animeId !== animeToDelete.animeId)))
@@ -23,10 +23,12 @@ const AnimeList = () => {
 
     return (
         <div className="container">
-            <h1>Anime</h1>
-            <Link to="/create-anime">
-                <i className="fas fa-plus fa-2x float-right btn"/>
-            </Link>
+            <div className="d-flex flex-row justify-content-between">
+                <h1>Anime</h1>
+                <Link to="/anime/create">
+                    <i className="fas fa-plus fa-2x btn btn-primary"/>
+                </Link>
+            </div>
 
             <div className="row">
                 {
@@ -35,7 +37,7 @@ const AnimeList = () => {
                         <AnimeCard
                             key={a.animeId}
                             anime={a}
-                            deleteAnime={deleteAnime}
+                            deleteHandler={deleteAnimeHandler}
                         />
                     ))
                 }

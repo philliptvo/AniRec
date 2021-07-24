@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const AnimeCard = ({anime, deleteAnime}) => {
+const AnimeCard = ({anime, deleteHandler}) => {
     const {animeId, title, animeType} = anime
 
     return (
@@ -15,8 +15,8 @@ const AnimeCard = ({anime, deleteAnime}) => {
                     </div>
                     <p className="card-text">{animeType}</p>
                     <i onClick={() => {
-                        deleteAnime(anime)
-                    }} className="fas fa-trash btn float-right"/>
+                        deleteHandler(anime)
+                    }} className="fas fa-trash-alt btn btn-danger"/>
                 </div>
             </div>
         </div>
