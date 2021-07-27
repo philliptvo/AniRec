@@ -4,8 +4,10 @@ import { Link, useParams } from "react-router-dom"
 import animeService from '../../services/anime.service';
 
 const AnimeDetail = () => {
+    const params = useParams()
     const { animeId } = useParams()
     const [anime, setAnime] = useState({});
+    console.log(params)
 
     useEffect(() => {
         animeService.findAnimeById(animeId)
@@ -23,7 +25,9 @@ const AnimeDetail = () => {
             </div>
 
             <h4>Media: {anime.animeType}</h4>
-            <p>Aired: {anime.airedFrom ? `${anime.airedFrom[1]} ${anime.airedFrom[0]}` : '?'} to {anime.airedTo ? `${anime.airedTo[1]} ${anime.airedTo[0]}` : '?'}</p>
+            <p>
+                Aired: {anime.airedFrom ? `${String(anime.airedFrom[1]).padStart(2, '0')} ${anime.airedFrom[0]}` : '?'} to {anime.airedTo ? `${String(anime.airedTo[1]).padStart(2, '0')} ${anime.airedTo[0]}` : '?'}
+            </p>
             <p>{anime.synopsis}</p>
         </div>
     )

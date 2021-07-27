@@ -4,8 +4,8 @@ import {useHistory, useParams} from 'react-router-dom'
 import animeService from '../../services/anime.service'
 
 const EditAnime = () => {
-    const {id} = useParams()
-    const isAddMode = !id
+    const {animeId} = useParams()
+    const isAddMode = !animeId
 
     const history = useHistory()
     const [newAnime, setAnime] = useState({
@@ -29,19 +29,14 @@ const EditAnime = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault()
 
-        const {airedFrom, airedTo} = newAnime
         const newData = JSON.parse(JSON.stringify(newAnime))
-        newData['airedFrom'] = airedFrom
-        newData['airedTo'] = airedTo
-        console.log(airedFrom, airedTo)
-        console.log(newData)
         if (newData.airedFrom !== "") {
             const fromDate = new Date(newData.airedFrom)
-            newData["airedFrom"] = [fromDate.getFullYear(), fromDate.getMonth(), 1]
+            newData["airedFrom"] = [fromDate.getUTCFullYear(), fromDate.getUTCMonth() + 1, 1]
         }
         if (newData.airedTo !== "") {
             const toDate = new Date(newData.airedTo)
-            newData["airedTo"] = [toDate.getFullYear(), toDate.getMonth(), 1]
+            newData["airedTo"] = [toDate.getUTCFullYear(), toDate.getUTCMonth() + 1, 1]
         }
 
         isAddMode ? doCreate(newData) : doUpdate(newData)
@@ -60,8 +55,8 @@ const EditAnime = () => {
     }
 
     const doUpdate = (anime) => {
-        animeService.updateAnime(id, anime)
-            .then((newAnime) => {
+        animeService.updateAnime(animeId, anime)
+            .then((_) => {
                 history.goBack()
             }).catch(err => {
                 // TODO: Show error to user
@@ -71,7 +66,7 @@ const EditAnime = () => {
 
     useEffect(() => {
         if (!isAddMode) {
-            animeService.findAnimeById(id).then(anime => {
+            animeService.findAnimeById(animeId).then(anime => {
                 const {airedFrom, airedTo} = anime
                 if (airedFrom) {
                     anime['airedFrom'] = `${String(airedFrom[0]).padStart(2, '0')}-${String(airedFrom[1]).padStart(2, '0')}`
@@ -83,14 +78,13 @@ const EditAnime = () => {
                 setAnime(anime)
             })
         } else {
-            // FIXME: Select field default value doesn't set state (using hooks)
             setAnime({...newAnime, animeType: 'TV'})
         }
     }, [])
 
     return(
         <div className="container">
-            <h1>Create Anime</h1>
+            <h1>{isAddMode ? 'Create Anime' : 'Update Anime'}</h1>
             <br/>
 
             <form onSubmit={(e) => onSubmitHandler(e)}>
@@ -121,7 +115,7 @@ const EditAnime = () => {
                 <div className="row form-group">
                     <label htmlFor="airedfrom" className="col-sm-2 col-form-label">Aired From</label>
                     <div className="col-sm-10">
-                        <input onChange={(e) => onChangeHandler(e)}
+                        <input onChange={(e) => {onChangeHandler(e)}}
                                value={newAnime.airedFrom}
                                className="form-control"
                                type="month" id="airedFrom" name="airedFrom"/>
@@ -145,7 +139,7 @@ const EditAnime = () => {
                     <label htmlFor="animetype" className="col-sm-2 col-form-label">Anime Type</label>
                     <div className="col-sm-10">
                         <select onChange={(e) => onChangeHandler(e)}
-                            value={newAnime.role}
+                            value={newAnime.animeType}
                             className="form-control"
                             name="animeType" id="animeType">
                             <option value="TV">TV</option>
