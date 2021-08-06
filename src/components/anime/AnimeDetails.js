@@ -4,10 +4,8 @@ import { Link, useParams } from "react-router-dom"
 import animeService from '../../services/anime.service';
 
 const AnimeDetail = () => {
-    const params = useParams()
     const { animeId } = useParams()
     const [anime, setAnime] = useState({});
-    console.log(params)
 
     useEffect(() => {
         animeService.findAnimeById(animeId)

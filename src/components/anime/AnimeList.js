@@ -18,6 +18,9 @@ const AnimeList = () => {
         animeService.deleteAnime(animeToDelete.animeId)
             .then(status =>
                 setAnimeList(animeList => animeList.filter(anime => anime.animeId !== animeToDelete.animeId)))
+            .catch(err => {
+                console.log(err)
+            })
             }
 
 

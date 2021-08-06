@@ -1,53 +1,42 @@
-const ANIME_URL = "http://localhost:8080/api/anime";
+import {API_BASE_URL} from '../utils/constants'
+import {request} from '../utils/helpers'
+
+const ANIME_URL = `${API_BASE_URL}/anime`
 
 const findAllAnimes = async () => {
-    return fetch(ANIME_URL)
-        .then(response => response.json())
+    return request({
+        url: ANIME_URL,
+        method: 'GET'
+    })
 }
 
 const findAnimeById = async (animeId) => {
-    return fetch(`${ANIME_URL}/${animeId}`)
-        .then(response => response.json())
+    return request({
+        url: `${ANIME_URL}/${animeId}`,
+        method: 'GET'
+    })
 }
 
 const createAnime = async (anime) => {
-    return fetch(ANIME_URL, {
+    return request({
+        url: ANIME_URL,
         method: 'POST',
-        body: JSON.stringify(anime),
-        headers: {
-            'content-type': 'application/json'
-        }
-    }).then(res => {
-        if (!res.ok) {
-            throw Error('Failed to create anime')
-        }
-        return res.json()
+        body: JSON.stringify(anime)
     })
 }
 
 const updateAnime = async (animeId, anime) => {
-    return fetch(`${ANIME_URL}/${animeId}`, {
+    return request({
+        url: `${ANIME_URL}/${animeId}`,
         method: 'PUT',
-        body: JSON.stringify(anime),
-        headers: {
-            'content-type': 'application/json'
-        }
-    }).then(res => {
-        if (!res.ok) {
-            throw Error('Failed to update anime')
-        }
-        return res.json()
+        body: JSON.stringify(anime)
     })
 }
 
 const deleteAnime = async (animeId) => {
-    return fetch(`${ANIME_URL}/${animeId}`, {
-        method: "DELETE"
-    }).then(res => {
-        if (!res.ok) {
-            throw Error('Failed to delete anime')
-        }
-        return res.json()
+    return request({
+        url: `${ANIME_URL}/${animeId}`,
+        method: 'DELETE'
     })
 }
 

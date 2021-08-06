@@ -143,7 +143,7 @@ const EditAnime = () => {
                             className="form-control"
                             name="animeType" id="animeType">
                             <option value="TV">TV</option>
-                            <option value="MOVIE">MOVIE</option>
+                            <option value="MOVIE">Movie</option>
                             <option value="OVA">OVA</option>
                         </select>
                     </div>
