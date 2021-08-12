@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 const AnimeCard = ({anime, deleteHandler}) => {
     const {animeId, title, animeType} = anime
 
+    console.log('anime :) : ', JSON.parse(JSON.stringify(anime)))
+
     return (
         <div className="col-3 ml-n2">
             <div className="card mt-5">

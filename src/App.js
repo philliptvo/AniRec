@@ -10,7 +10,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Header from './components/Header.js'
 import Anime from './routes/anime'
-import Review from './routes/review';
+import Review from './components/review/ReviewCard';
 import Snippets from './routes/snippets';
 
 function App () {

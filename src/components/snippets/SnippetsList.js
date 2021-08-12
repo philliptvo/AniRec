@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , Component} from 'react';
 import SnippetsCard from "./SnippetsCard";
 
 import snippetsService from '../../services/snippets.service'
 import {Link} from "react-router-dom";
 
 const SnippetsList = () => {
-    const [snippetsList, setSnippetsList] = useState([])
+    //// Empty array in useState
+    const [snippetsList, setSnippetsList] = useState();
+ 
 
     useEffect(() => {
         snippetsService.findAllSnippets()
-            .then(snippetsList => {
-                setSnippetsList(snippetsList)
+            .then(res => {
+                setSnippetsList(res)
             })
-    }, [])
+        }, [])
 
     // const deleteAnimeHandler = (animeToDelete) => {
     //     animeService.deleteAnime(animeToDelete.animeId)
@@ -25,29 +27,42 @@ const SnippetsList = () => {
 
 
     return (
-        <div className="container">
-            <div className="d-flex flex-row justify-content-between">
-                <h1>Snippets</h1>
+        <div>
+            <h1>Snippets Page</h1>
+             {/* <div className="d-flex flex-row justify-content-between"> 
+                
                 <Link to="/snippets/create">
                     <i className="fas fa-plus fa-2x btn btn-primary"/>
                 </Link>
-            </div>
-
-            <div className="row">    
-            {
-            snippetsList != null &&
-            snippetsList.map(x => ( 
+            </div> */}
+            {/* <div className="SnippetsCard">  */}
+                {/* { 
+                    snippetsList != null &&
+                    snippetsList.map(item => (
                         <SnippetsCard
-                             //key={x.snipId}
-                             userSnippet={x}
-                           // deleteHandler={deleteAnimeHandler}
-                        />
-            ))
-            }
-            </div>
+                           key={item.snipId}
+                           userSnippet={item}
+                     />
+                    ))
+                } */}
+                       { 
+                    snippetsList != null &&
+                    snippetsList.map(item => (
+                        <SnippetsCard
+                           key={item.snipId}
+                           userSnippet={item}
+                        //    userId={item.snipId}
+                        //    snippet={item.snippet}
+                        //    user={[item.user]}
+                        //    anime={item.anime}
+
+                     />
+                    ))
+                }
+            {/* </div> */}
         </div>
     )
    
 }
 
-export default SnippetsList
+export default SnippetsList;

@@ -10,13 +10,13 @@ const findAllSnippets = async () => {
     })
 }
 
-// //need to find anime name by its id 
-// const findAnimeById = async (animeId) => {
-//     return request({
-//         url: `${ANIME_URL}/${animeId}`,
-//         method: 'GET'
-//     })
-// }
+//need to find anime name by its id 
+const findSnippetsById = async (snipId) => {
+    return request({
+        url: `${SNIPPETS_URL}/${snipId}`,
+        method: 'GET'
+    })
+}
 
 // const createSnippet = async (snippets) => {
 //     return request({
@@ -29,7 +29,8 @@ const findAllSnippets = async () => {
 
 
 const snippetsService = {
-    findAllSnippets
+    findAllSnippets,
+    findSnippetsById
    // createSnippet
 }
 
