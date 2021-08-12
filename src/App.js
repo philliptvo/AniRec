@@ -9,6 +9,7 @@ import userService from './services/user.service'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Header from './components/Header.js'
+import Home from './components/Home.js'
 import Anime from './routes/anime'
 
 function App () {
@@ -60,6 +61,7 @@ function App () {
                     <Switch>
                         <Route path="/login" render={(props) => <Login onLogin={loginHandler} {...props} />}></Route>
                         <Route path="/register" component={Register}></Route>
+                        <Route path="/home" component={Home} />
                         <Route path="/anime" component={Anime} />
                     </Switch>
                 </div>
