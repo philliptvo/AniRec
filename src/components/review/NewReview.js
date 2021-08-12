@@ -112,11 +112,11 @@ const NewReview = () => {
 </form> 
 {/* trying to make a toggle button, but need to get current users username */}
                 <div className="row form-group">
-                <div class="switch">
+                <div className="switch">
                     <label>
                         UserName
                         <input type="checkbox" checked></input>
-                        <span class="lever"></span> Anonymous
+                        <span className="lever"></span> Anonymous
                     </label>
                     
                     <input onClick={(e) => {onChangeHandler(e)}}

@@ -116,7 +116,7 @@ const NewSnippets = () => {
 
             </form> 
    {/* <button type="submit" className="btn btn-primary col-sm-12">{ "Create" }</button> */}
-        <button class="done" className="btn btn-primary col-sm-12" onClick={() => { history.push("/snippets") }}>Create</button>
+        <button className="done" className="btn btn-primary col-sm-12" onClick={() => { history.push("/snippets") }}>Create</button>
         </div>
     )
 }

@@ -63,7 +63,7 @@ function App () {
                     <Switch>
                         <Route path="/login" render={(props) => <Login onLogin={loginHandler} {...props} />}></Route>
                         <Route path="/register" component={Register}></Route>
-                        <Route path="/home" component={Home} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/anime" component={Anime} />
                         <Route path="/reviews" component={Review} />
                         <Route path="/snippets" component={Snippets} />
