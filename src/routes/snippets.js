@@ -9,7 +9,7 @@ function Snippets() {
     return (
         <Switch>
             <Route exact path={path} component={SnippetsList} />
-            {/* <Route path={`${path}/create`} component={NewSnippets} />  */}
+            <Route path={`${path}/create`} component={NewSnippets} /> 
             {/* <Route path={`${path}/edit/:animeId`} component={EditAnime} />
             <Route path={`${path}/:animeId`} component={AnimeDetails} /> */}
         </Switch>

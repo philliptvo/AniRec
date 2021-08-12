@@ -34,11 +34,11 @@ const SnippetsList = () => {
 
 
     return (
-        <div>
-            <h1>Snippets Page</h1>
+        <div className="container">
+        
              <div className="d-flex flex-row justify-content-between"> 
-                
-                <Link to="/snippets/create">
+             <h1>Snippets Page</h1>
+                <Link to="/snippets/create" >
                     <i className="fas fa-plus fa-2x btn btn-primary"/>
                 </Link>
             </div>

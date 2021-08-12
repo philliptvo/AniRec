@@ -42,8 +42,14 @@ import {Link} from "react-router-dom";
     //     </div>
     // </div>
 
-<div style={{padding:"25px"}}>
-    <h1> Reviews</h1>
+<div className="container" >
+   
+    <div className="d-flex flex-row justify-content-between">
+                <h1>Reviews</h1>
+                <Link to="/reviews/create">
+                    <i className="fas fa-plus fa-2x btn btn-primary"/>
+                </Link>
+            </div>
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
@@ -66,7 +72,8 @@ import {Link} from "react-router-dom";
             <li>shadowfirefly</li>
             <li>Rating: 8.5</li> 
             </ul>
-            <p className="card-text">I have seen the 1st season and was not disappointed. This anime genre is Shojou,
+            <p className="card-text" style={{overflow:"auto",
+    padding: "10px"}}>I have seen the 1st season and was not disappointed. This anime genre is Shojou,
              which <br></br>of course focuses on romance, female leads and smooth animation. This Anime is more of a light hearted humor and romantic drama series. Do watch the 1st season
             </p>
         </div>
