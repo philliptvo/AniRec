@@ -86,7 +86,7 @@ const NewSnippets = () => {
 
             <form onSubmit={(e) => onSubmitHandler(e)}>
                 <div className="row form-group">
-                    <label htmlFor="title" className="col-sm-2 col-form-label">Snippet</label>
+                    <label htmlFor="title" className="col-sm-2 col-form-label">Anime</label>
                     <div className="col-sm-10">
                         <input onChange={(e) => onChangeHandler(e)}
                             value={newSnippets.anime}
