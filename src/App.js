@@ -11,6 +11,8 @@ import Register from './components/auth/Register'
 import Header from './components/Header.js'
 import Home from './components/Home.js'
 import Anime from './routes/anime'
+import Review from './components/review/ReviewCard';
+import Snippets from './routes/snippets';
 
 function App () {
     const [currentUser, setCurrentUser] = useState(null)
@@ -63,6 +65,8 @@ function App () {
                         <Route path="/register" component={Register}></Route>
                         <Route path="/home" component={Home} />
                         <Route path="/anime" component={Anime} />
+                        <Route path="/reviews" component={Review} />
+                        <Route path="/snippets" component={Snippets} />
                     </Switch>
                 </div>
             </BrowserRouter>
