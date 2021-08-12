@@ -10,6 +10,8 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Header from './components/Header.js'
 import Anime from './routes/anime'
+import Review from './routes/review';
+import Snippets from './routes/snippets';
 
 function App () {
     const [currentUser, setCurrentUser] = useState(null)
@@ -61,6 +63,8 @@ function App () {
                         <Route path="/login" render={(props) => <Login onLogin={loginHandler} {...props} />}></Route>
                         <Route path="/register" component={Register}></Route>
                         <Route path="/anime" component={Anime} />
+                        <Route path="/reviews" component={Review} />
+                        <Route path="/snippets" component={Snippets} />
                     </Switch>
                 </div>
             </BrowserRouter>

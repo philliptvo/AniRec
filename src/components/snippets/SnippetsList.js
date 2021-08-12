@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import ReviewCard from "./ReviewCard";
+import SnippetsCard from "./SnippetsCard";
 
-import reviewService from '../../services/review.service'
+import snippetsService from '../../services/snippets.service'
 import {Link} from "react-router-dom";
 
-const ReviewList = () => {
-     const [reviewList, setReviewList] = useState([])
+const SnippetsList = () => {
+    const [snippetsList, setSnippetsList] = useState([])
 
     useEffect(() => {
-        reviewService.findAllReviews()
-            .then(reviewList => {
-                setReviewList(reviewList)
+        snippetsService.findAllSnippets()
+            .then(snippetsList => {
+                setSnippetsList(snippetsList)
             })
     }, [])
 
@@ -27,30 +27,27 @@ const ReviewList = () => {
     return (
         <div className="container">
             <div className="d-flex flex-row justify-content-between">
-                <h1>Reviews</h1>
-                <Link to="/reviews/create">
+                <h1>Snippets</h1>
+                <Link to="/snippets/create">
                     <i className="fas fa-plus fa-2x btn btn-primary"/>
                 </Link>
             </div>
 
-            <div className="row">
-                
-               {
-                    
-                    reviewList.map(a => ( 
-                         <ReviewCard
-                              key={a.reviewId}
-                              anime={a}
-                             //deleteHandler={deleteAnimeHandler}
+            <div className="row">    
+            {
+            snippetsList != null &&
+            snippetsList.map(x => ( 
+                        <SnippetsCard
+                             //key={x.snipId}
+                             userSnippet={x}
+                           // deleteHandler={deleteAnimeHandler}
                         />
-                      
-                        )    )
-                }
-                
+            ))
+            }
             </div>
         </div>
     )
    
 }
 
-export default ReviewList
+export default SnippetsList

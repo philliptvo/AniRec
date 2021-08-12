@@ -3,11 +3,10 @@ import {Link} from "react-router-dom";
 
 //handles what each card will look like
 
-import React from 'react'
-import {Link} from "react-router-dom";
 
-const ReviewCard = ({userReview, deleteHandler}) => {
-  const {reviewid, score, review, username, title} = userReview
+// const ReviewCard = ({userReview, deleteHandler}) => {
+    const ReviewCard = () => {
+  //const {reviewid, score, review, username, title} = userReview
 
   const styleObject = {
    "font-size" : "18px",
@@ -28,18 +27,21 @@ const ReviewCard = ({userReview, deleteHandler}) => {
 
     return (
 
-    <div className="card mt-5" >
+    <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-              <li>{title}</li>
+              {/* <li>{title}</li>
               <li>{username}</li>
-              <li>Rating:{score}</li>
+              <li>Rating:{score}</li> */}
+              <li>title</li>
+              <li>username</li>
+              <li>Rating:score</li> 
             </ul>
-            <p className="card-text"> {review}</p>
-           
-            <i onClick={() => {
+            <p className="card-text">this is where the review will go </p>
+            {/* <p className="card-text">{review} </p> */}
+            {/* <i onClick={() => {
                 deleteHandler(userReview)
-            }} className="fas fa-trash-alt btn btn-danger"/>
+            }} className="fas fa-trash-alt btn btn-danger"/> */}
         </div>
     </div>
 

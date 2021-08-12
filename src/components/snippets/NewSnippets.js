@@ -1,25 +1,26 @@
 import React, {useEffect, useState} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
 
-import reviewService from '../../services/review.service'
+import snippetsService from '../../services/snippets.service'
 
-const NewReview = () => {
+const NewSnippets = () => {
     //const {animeId} = useParams()
   
 
     // how to get anime title form animeId, also reviews aer probably better in a list format?
    // const history = useHistory()
-    const [newReview, setReview] = useState({
+    const [newSnippets, setSnippets] = useState({
         anime:'',
-        userName:'',
-        score: ''
+        user:'',
+        // upvotes: '',
+        snippet:''
     })
 
     const onChangeHandler = (e) => {
         const {name, value} = e.target
 
-        setReview({
-            ...newReview,
+        setSnippets({
+            ...newSnippets,
             [name] : value,
         })
     }
@@ -27,12 +28,12 @@ const NewReview = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault()
 
-        const newData = JSON.parse(JSON.stringify(newReview))
-        if (newData.score !== "") {
-            newData["score"] = ['0.0']
+        const newData = JSON.parse(JSON.stringify(newSnippets))
+        if (newData.upvotes !== "") {
+            newData["Upvotes"] = ['0.0']
         }
         if (newData.userName !== "") {
-            newData["userNAme"] = ["anonymous"]
+            newData["userName"] = ["anonymous"]
         }
 
       
@@ -81,7 +82,7 @@ const NewReview = () => {
 
     return(
         <div className="container">
-            <h1>{'Create New Review' }</h1>
+            <h1>{'Create A New Snippet' }</h1>
             <br/>
 
             <form onSubmit={(e) => onSubmitHandler(e)}>
@@ -89,7 +90,7 @@ const NewReview = () => {
                     <label htmlFor="title" className="col-sm-2 col-form-label">Title</label>
                     <div className="col-sm-10">
                         <input onChange={(e) => onChangeHandler(e)}
-                            value={newReview.anime}
+                            value={newSnippets.anime}
                             type="text" name="title" id="title" className="form-control"
                             placeholder="Anime title"
                             required />
@@ -102,7 +103,7 @@ const NewReview = () => {
                     <label className="col-sm-2 col-form-label">Score</label>
                     <div className="col-sm-10">
                         <textarea onChange={(e) => onChangeHandler(e)}
-                               value={newReview.score}
+                               value={newSnippets.score}
                                 name="score" id="score" className="form-control"
                                />
                     </div>
@@ -110,28 +111,14 @@ const NewReview = () => {
                 <br/>
 
 </form> 
-{/* trying to make a toggle button, but need to get current users username */}
-                <div className="row form-group">
-                <div class="switch">
-                    <label>
-                        UserName
-                        <input type="checkbox" checked></input>
-                        <span class="lever"></span> Anonymous
-                    </label>
-                    
-                    <input onClick={(e) => {onChangeHandler(e)}}
-                            value={newReview.userName}
-                            className="form-control"
-                            type="decimal" id="score" name="score"/>
-                </div>
-                <br/>
+
 
                 
                 <button type="submit" className="btn btn-primary col-sm-12">{ "Create" }</button>
          
-        </div>
+    
         </div>
     )
 }
 
-export default NewReview
+export default NewSnippets

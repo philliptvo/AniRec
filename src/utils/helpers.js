@@ -15,10 +15,10 @@ const request = async (options) => {
     return fetch(options.url, options)
     .then(res => {
         if (!res.ok) {
-            Promise.reject(res.json())
+            Promise.reject(res.clone().json())
         }
 
-        return res.json()
+        return res.clone().json()
     })
 }
 

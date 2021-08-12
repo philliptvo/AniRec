@@ -10,13 +10,13 @@ const findAllReviews = async () => {
     })
 }
 
-//need to find anime name by its id 
-const findAnimeById = async (animeId) => {
-    return request({
-        url: `${ANIME_URL}/${animeId}`,
-        method: 'GET'
-    })
-}
+// //need to find anime name by its id 
+// const findAnimeById = async (animeId) => {
+//     return request({
+//         url: `${ANIME_URL}/${animeId}`,
+//         method: 'GET'
+//     })
+// }
 
 const createReview = async (anime) => {
     return request({
@@ -42,10 +42,10 @@ const createReview = async (anime) => {
 //     })
 //}
 
-const animeService = {
+const reviewService = {
     findAllReviews,
-    findAnimeById,
-    createReview ,
+    // findAnimeById,
+    createReview 
   
 }
 
