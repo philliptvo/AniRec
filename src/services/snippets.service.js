@@ -10,6 +10,13 @@ const findAllSnippets = async () => {
     })
 }
 
+// const findAllUpvotes = async () => {
+//     return request({
+//         url: 'localhost:8080/api/upvotes',
+//         method: 'GET'
+//     })
+// }
+
 //need to find anime name by its id 
 const findSnippetsById = async (snipId) => {
     return request({

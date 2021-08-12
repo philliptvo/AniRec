@@ -42,14 +42,14 @@ import {Link} from "react-router-dom";
     //     </div>
     // </div>
 
-<div>
+<div style={{padding:"25px"}}>
     <h1> Reviews</h1>
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
               <li>Cowboy Bebop</li>
               <li>edgewalker002</li>
-              <li>Rating:10.0</li> 
+              <li>Rating: 10.0</li> 
             </ul>
             <p className="card-text">        So. Unbelievably. Amazing.<br></br> 
              The story and style is so different and unique from what you might usually think of when the 
@@ -62,11 +62,12 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
-            <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Kamisama hajimemashita</li>
+            <li>shadowfirefly</li>
+            <li>Rating: 8.5</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text">I have seen the 1st season and was not disappointed. This anime genre is Shojou,
+             which <br></br>of course focuses on romance, female leads and smooth animation. This Anime is more of a light hearted humor and romantic drama series. Do watch the 1st season
             </p>
         </div>
     </div>
@@ -74,11 +75,11 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
+            <li>Naruto</li>
             <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Rating: 6.0</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text">To be honest, Naruto is the most overhyped show in existence. Everyone goes on and on and on about how great it is; and my expectations for this show was equally high. However, I was really, really let down. Really. This wasn't the best show ever, as I had thought it would be. Don't get me wrong, the show is enjoyable, but it's definitely not among the best shows out there.
             </p>
         </div>
     </div>
@@ -86,11 +87,13 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
-            <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li> Made in Abyss</li>
+            <li>IceAndCream_1</li>
+            <li>Rating: 5.0</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text"> "If you gaze long into an abyss, the abyss also gazes into you." - Some anime bad guy, probably.
+
+Well, I've gazed into this abyss long enough. I might get more enjoyment or value from staring at a literal black pit than watching another episode of this plodding, interminable slog of a manga adaptation.
             </p>
         </div>
     </div>
@@ -98,11 +101,11 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
+            <li>Haikyuu!! Second Season</li>
             <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Rating: 6.0</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text"> As you probably already know, competitive spirit, teamwork, communication, and perseverance are all common themes that unite the sports genre as a whole. Therefore, to truly differentiate one show from other similar shows, scriptwriters need to engage the audience in a remarkably new and refreshing way.
             </p>
         </div>
     </div>
@@ -110,11 +113,11 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
-            <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Jujutsu Kaisen</li>
+            <li>AlexanderMaya</li>
+            <li>Rating: 9.0</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text">Jujutsu kaisen has become really popular since its inception. Whether you are shonen fan or not, you are most likely going to enjoy this show. It offers more than an ordinary shonen.
             </p>
         </div>
     </div>
@@ -122,11 +125,11 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
-            <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Monster</li>
+            <li>LegendAqua</li>
+            <li>Rating:9.5</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text"> Monster is an anime that I used to scoff at every time I saw high ratings for it. I was never really into long plot driven anime and I couldn't understand how so many people loved it, but seeing the ratings, I couldn't help but be interested.
             </p>
         </div>
     </div>
@@ -134,11 +137,14 @@ import {Link} from "react-router-dom";
     <div className="card mt-5" style={{border:"none"}}>
         <div className="card-body"style={styleObject}>
             <ul className="card-text"style={right}>
-            <li>Cowboy Bebop</li>
-            <li>MrAnimeCrunch</li>
-            <li>Rating:10.0</li> 
+            <li>Fullmetal Alchemist: Brotherhood</li>
+            <li>dragonwarrior123</li>
+            <li>Rating:6.5</li> 
             </ul>
-            <p className="card-text">        feeef
+            <p className="card-text"> Fullmetal Alchemist: Brotherhood gets an immense amount of praise in the
+             MAL community, is the #1 ranked show and is constantly referred to as a masterpiece and the greatest
+              show ever created.However, I personally feel as though calling FMA:B a masterpiece and the champion 
+               of all shows is a bit of a stretch.
             </p>
         </div>
     </div>

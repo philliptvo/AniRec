@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 const SnippetsList = () => {
     //// Empty array in useState
     const [snippetsList, setSnippetsList] = useState();
+    // const[upvotesNum, setUpvotesNum] = useState();
  
 
     useEffect(() => {
@@ -16,6 +17,12 @@ const SnippetsList = () => {
             })
         }, [])
 
+        // useEffect(() => {
+        //     snippetsService.findAllUpvotes()
+        //         .then(res => {
+        //             setUpvotesNum(res)
+        //         })
+        //     }, [])
     // const deleteAnimeHandler = (animeToDelete) => {
     //     animeService.deleteAnime(animeToDelete.animeId)
     //         .then(status =>
@@ -29,33 +36,19 @@ const SnippetsList = () => {
     return (
         <div>
             <h1>Snippets Page</h1>
-             {/* <div className="d-flex flex-row justify-content-between"> 
+             <div className="d-flex flex-row justify-content-between"> 
                 
                 <Link to="/snippets/create">
                     <i className="fas fa-plus fa-2x btn btn-primary"/>
                 </Link>
-            </div> */}
-            {/* <div className="SnippetsCard">  */}
-                {/* { 
-                    snippetsList != null &&
-                    snippetsList.map(item => (
-                        <SnippetsCard
-                           key={item.snipId}
-                           userSnippet={item}
-                     />
-                    ))
-                } */}
+            </div>
+         
                        { 
                     snippetsList != null &&
                     snippetsList.map(item => (
                         <SnippetsCard
                            key={item.snipId}
                            userSnippet={item}
-                        //    userId={item.snipId}
-                        //    snippet={item.snippet}
-                        //    user={[item.user]}
-                        //    anime={item.anime}
-
                      />
                     ))
                 }
