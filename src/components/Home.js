@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
-import Header from './Header.js'
 import './home.css'
+import Background from './naruto.png';
 
 const Home = () => {
     const [recipes, setRecipes] = useState({meals:[]});
@@ -26,21 +26,17 @@ const Home = () => {
         return () => clearInterval(slider)
     }, [index])
 
+    const sectionStyle = {
+        width: "100%",
+        height: "100%",
+        "background-size": "100% auto",
+        ul: 0,
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(${Background})`
+    };
+
     return (
         <>
-            <div className="container-fluid mt-5">
-                {/*<h1>Home</h1>*/}
-                {/*  <div>*/}
-                {/*      <Link to={"/search"}>*/}
-                {/*          Search*/}
-                {/*      </Link>*/}
-                {/*  </div>*/}
-                {/*<div>*/}
-                {/*    <Link to={"/register"}>*/}
-                {/*        Register*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
-
+            <div className="container-fluid" style={sectionStyle}>
                 <section className="section">
                     <div className="title">
                         {
@@ -86,9 +82,7 @@ const Home = () => {
                             <i className="fas fa-chevron-circle-right"></i>
                         </button>
                     </div>
-                </section>
 
-                <section className="section">
                     <div className="title">
                         {
                             currentUser && <h2>
@@ -133,13 +127,11 @@ const Home = () => {
                             <i className="fas fa-chevron-circle-right"></i>
                         </button>
                     </div>
-                </section>
 
-                <section className="section">
                     <div className="title">
                         {
                             currentUser && <h2>
-                                <span>/</span> Here are your most recent favorited anime!
+                                <span>/</span> Here are your most favorited anime!
                             </h2>
                         }
                         {
@@ -181,9 +173,7 @@ const Home = () => {
                         </button>
                     </div>
                 </section>
-
             </div>
-            {/*<Footer/>*/}
         </>
     )
 }

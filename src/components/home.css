@@ -3,7 +3,6 @@
 Variables
 ===============
 */
-
 :root {
     /* dark shades of primary color*/
     --clr-primary-1: hsl(21, 91%, 17%);
@@ -123,7 +122,7 @@ p {
 /* section */
 .section {
     width: 90vw;
-    margin: 5rem auto;
+    margin: 0 auto;
     max-width: var(--max-width);
 }
 
@@ -140,12 +139,15 @@ Slider
 .title {
     text-align: center;
     margin-bottom: 2rem;
+    color: white;
 }
 .title h2 {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 .title span {
     font-size: 0.85em;
@@ -228,6 +230,10 @@ article h4 {
 }
 .next {
     right: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
 }
 
 @media (min-width: 800px) {
