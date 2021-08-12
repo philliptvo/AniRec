@@ -14,7 +14,7 @@ import {Link} from "react-router-dom";
   const styleObject = {
    "fontSize" : "18px",
     "height" : "auto",
-    "width" : "80%",
+    "width" : "100%",
     "border" : "3px solid rgba(0, 0, 0, 0.15)",
     "borderRadius" : "10px",
     "margin" : "auto",
@@ -26,7 +26,7 @@ import {Link} from "react-router-dom";
 
     return (
 
-        <div className="card mt-5" style={{border:"none"}}>
+        <div className="card mt-5" style={{border:"none", alignContent:"center"}}>
            
         <div className="card-body"style={styleObject}>
 
@@ -40,6 +40,7 @@ import {Link} from "react-router-dom";
             </div>
         </div>
     </div>
+
 
 
     )

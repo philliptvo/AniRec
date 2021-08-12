@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
   const styleObject = {
    "font-size" : "18px",
     "height" : "auto",
-    "width" : "80%",
+    "width" : "auto",
     "border" : "3px solid rgba(0, 0, 0, 0.15)",
     "border-radius" : "10px",
     "margin" : "auto",
@@ -42,7 +42,7 @@ import {Link} from "react-router-dom";
     //     </div>
     // </div>
 
-<div className="container" >
+<div className="container" style={{borderRadius: "10px"}}>
    
     <div className="d-flex flex-row justify-content-between">
                 <h1>Reviews</h1>
