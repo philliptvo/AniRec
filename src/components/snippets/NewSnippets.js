@@ -86,13 +86,13 @@ const NewSnippets = () => {
 
             <form onSubmit={(e) => onSubmitHandler(e)}>
                 <div className="row form-group">
-                    <label htmlFor="title" className="col-sm-2 col-form-label">Anime</label>
+                    <label className="col-sm-2 col-form-label">Anime</label>
                     <div className="col-sm-10">
-                        <input onChange={(e) => onChangeHandler(e)}
+                        <textarea onChange={(e) => onChangeHandler(e)}
                             value={newSnippets.anime}
-                            type="text" name="title" id="title" className="form-control"
-                            placeholder="Anime title"
-                            required />
+                            type="text" name="anime" id="anime" className="form-control"
+                            placeholder="Anime title" required
+                            />
                     </div>
                 </div>
                 <br/>
@@ -116,7 +116,7 @@ const NewSnippets = () => {
 
             </form> 
    {/* <button type="submit" className="btn btn-primary col-sm-12">{ "Create" }</button> */}
-        <button className="done" className="btn btn-primary col-sm-12" onClick={() => { history.push("/snippets") }}>Create</button>
+        <button class="done" className="btn btn-primary col-sm-12" onClick={() => { history.push("/snippets") }}>Create</button>
         </div>
     )
 }
