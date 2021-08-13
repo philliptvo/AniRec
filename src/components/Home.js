@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import './home.css'
-import Background from './naruto.png';
+import Background from './homePics/naruto.png';
+import Titan from './homePics/attack_on_titan.png';
+import OnePiece from './homePics/one_piece.jpg';
+import DragonBall from './homePics/dragon_ball.png';
 
 const Home = () => {
     const [recipes, setRecipes] = useState({meals:[]});
@@ -52,29 +55,9 @@ const Home = () => {
 
                     </div>
                     <div className="section-center">
-                        {
-                            recipes.meals.slice(0, 10).map((meal, mealIndex) => {
-                                const {strMeal, strMealThumb, strInstructions, strArea} = meal;
-                                let position = 'nextSlide'
-                                if (mealIndex === index) {
-                                    position = 'activeSlide'
-                                }
-                                if(mealIndex === index - 1 || (index === 0 &&
-                                    mealIndex === 10)) {
-                                    position = 'lastSlide'
-                                }
-
-                                return <article className={position}>
-                                    <Link to={`/${strMeal}/details/${meal.idMeal}`}>
-                                        <img src={strMealThumb} alt={strMeal} className='recipe-img'/>
-                                        <h4>{strMeal}</h4>
-                                    </Link>
-                                    <p className="title mt-3">{strArea}</p>
-                                    <p className="text">{strInstructions}</p>
-
-                                </article>
-                            })
-                        }
+                        <article className="activeSlide">
+                        <img src={Titan} alt="Attack on Titan" className='recipe-img'/>
+                        </article>
                         <button className="prev" onClick={() => setIndex(index - 1)}>
                             <i className="fas fa-chevron-circle-left"></i>
                         </button>
@@ -97,29 +80,9 @@ const Home = () => {
 
                     </div>
                     <div className="section-center">
-                        {
-                            recipes.meals.slice(0, 10).map((meal, mealIndex) => {
-                                const {strMeal, strMealThumb, strInstructions, strArea} = meal;
-                                let position = 'nextSlide'
-                                if (mealIndex === index) {
-                                    position = 'activeSlide'
-                                }
-                                if(mealIndex === index - 1 || (index === 0 &&
-                                    mealIndex === 10)) {
-                                    position = 'lastSlide'
-                                }
-
-                                return <article className={position}>
-                                    <Link to={`/${strMeal}/details/${meal.idMeal}`}>
-                                        <img src={strMealThumb} alt={strMeal} className='recipe-img'/>
-                                        <h4>{strMeal}</h4>
-                                    </Link>
-                                    <p className="title mt-3">{strArea}</p>
-                                    <p className="text">{strInstructions}</p>
-
-                                </article>
-                            })
-                        }
+                        <article className="activeSlide">
+                            <img src={OnePiece} alt="One Piece" className='recipe-img'/>
+                        </article>
                         <button className="prev" onClick={() => setIndex(index - 1)}>
                             <i className="fas fa-chevron-circle-left"></i>
                         </button>
@@ -131,7 +94,7 @@ const Home = () => {
                     <div className="title">
                         {
                             currentUser && <h2>
-                                <span>/</span> Here are your most favorited anime!
+                                <span>/</span> Here are anime you recently favorited!
                             </h2>
                         }
                         {
@@ -142,29 +105,9 @@ const Home = () => {
 
                     </div>
                     <div className="section-center">
-                        {
-                            recipes.meals.slice(0, 10).map((meal, mealIndex) => {
-                                const {strMeal, strMealThumb, strInstructions, strArea} = meal;
-                                let position = 'nextSlide'
-                                if (mealIndex === index) {
-                                    position = 'activeSlide'
-                                }
-                                if(mealIndex === index - 1 || (index === 0 &&
-                                    mealIndex === 10)) {
-                                    position = 'lastSlide'
-                                }
-
-                                return <article className={position}>
-                                    <Link to={`/${strMeal}/details/${meal.idMeal}`}>
-                                        <img src={strMealThumb} alt={strMeal} className='recipe-img'/>
-                                        <h4>{strMeal}</h4>
-                                    </Link>
-                                    <p className="title mt-3">{strArea}</p>
-                                    <p className="text">{strInstructions}</p>
-
-                                </article>
-                            })
-                        }
+                        <article className="activeSlide">
+                            <img src={DragonBall} alt="Dragon Ball" className='recipe-img'/>
+                        </article>
                         <button className="prev" onClick={() => setIndex(index - 1)}>
                             <i className="fas fa-chevron-circle-left"></i>
                         </button>

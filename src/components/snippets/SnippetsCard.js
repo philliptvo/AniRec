@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom";
 
 
+
 //handles what each card will look like
 
   const SnippetsCard = ({userSnippet}) => {
